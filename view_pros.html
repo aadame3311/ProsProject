@@ -4,33 +4,58 @@
     <meta charset="utf-8">
     <title>Pros Project</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="view.css">
 
 </head>
 
 <body>
-  <!-- link to Facebook API -->
-  <script src="fb_pros.js">
-  </script>
+    <!-- link to Facebook API -->
+    <script src="fb_pros.js">
+    </script>
+    
+
+    <!-- bootstrap default navbar layout -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">ProsProject</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+        <ul class="navbar-collapese navbar-right"> 
+            <li class="navbar-nav active">  
+                <!-- facebook log in button -->      
+                <div class="fb-login-button"
+                id="fb-button"
+                scope="public_profile, email, user_birthday, user_location"
+                onlogin="checkLoginState();" 
+                data-max-rows="1" 
+                data-size="large" 
+                data-button-type="login_with" 
+                data-show-faces="false" 
+                data-auto-logout-link="false" data-use-continue-as="true">
+                    
+                </div>
+            </li>
+            <li class="navbar-nav active">
+              <button id="logout-button" onclick="logoutPressed();">Log out</button>
+            </li>
+        </ul>
+
+      </div>
+    </nav>
 
 
 
-<div id='fb-container'>
-    <div class="fb-login-button"
-      id = "fb-button"
-      scope="public_profile, email, user_friends"
-      onlogin="checkLoginState();";
-      data-max-rows="1" 
-      data-size="large" 
-      data-button-type="continue_with" 
-      data-show-faces="false" 
-      data-auto-logout-link="false" 
-      data-use-continue-as="false">
-    </div>
-    <!-- logout button -->
-    <button id="logout-button" onclick="logoutPressed();">Log out</button>
-</div>
+
+
+    <!-- MAIN PAGE BODY -->
+    <div id="info"> </div>
 
 </body>
 

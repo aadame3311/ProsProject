@@ -4,6 +4,13 @@ body{
     background-size: cover;
 }
 
+/*body content */ 
+#info {
+    background-color: gray;
+    margin-top: 100px;
+    padding: 50px;
+}
+
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -31,25 +38,8 @@ button:hover {
     opacity: 0.8;
 }
 
-
-#logout-button {
+#fb-button #logout-button {
     display: none;
-}
-
-/* Add padding to containers */
-#fb-container {
-    display: none;
-    border-radius: 30px;
-    background-color:white;
-    width:20%;
-    min-width: 100px;
-    padding: 16px;
-    padding-bottom: 300px;
-    text-align: center;
-    margin: 150px 0 150px 0;
-    margin-right: auto;
-    margin-top: 20%;
-    margin-left: auto;
 }
 
 /* The "Forgot password" text */
