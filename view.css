@@ -32,9 +32,13 @@ button:hover {
 }
 
 
-/* Add padding to containers */
+#logout-button {
+    display: none;
+}
 
-.container {
+/* Add padding to containers */
+#fb-container {
+    display: none;
     border-radius: 30px;
     background-color:white;
     width:20%;
