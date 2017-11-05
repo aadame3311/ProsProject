@@ -4,15 +4,9 @@ form {
 
 }
 body{
-
-
-
-
     background-image: url('skyline2.png');
     min-width: 50%;
     background-size: 100%;
-
-
 
 }
 
@@ -53,6 +47,7 @@ button:hover {
     text-align: center;
     margin: 150px 0 150px 0;
     margin-right: auto;
+    margin-top: 15%;
     margin-left: auto;
 }
 
