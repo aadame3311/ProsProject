@@ -26,13 +26,41 @@ function statusChangeCallback(response) {
       console.log("Logged in and Authenticated");
       setElements(true);
       testAPI();
+      addList();
      
   } else { 
       console.log("not authenticated");    
       setElements(false);
-      
 
    }
+}
+
+
+function addList() {
+
+  //grandparent variable is list container. 
+  //from there, the parent variable is the unordered list created
+    //from the div container.
+  var grand = document.getElementById("list-cont");
+  var list = document.createElement("ul");
+  list.id="disp-list";
+  grand.appendChild(list);
+  var parent = list;
+
+  //add each list item to the html.
+  for (i = 0; i < 4; i++) {
+    var item = document.createElement("li");
+    item.className = "list-item";
+    parent.appendChild(item);
+  }
+}
+
+//delete parent generated from the div container in order
+  //to stop displaying list when user logs off. 
+function removeList() {
+ 
+  var element = document.getElementById("disp-list");
+  element.parentNode.removeChild(element);
 }
 
 
@@ -45,11 +73,11 @@ function testAPI() {
   });
 }
 
+//display facebook user profile information.
 function userProfile(user) {
   let profile =`
     <h1>${user.name}</h1>
-    <h3>Birthday: ${user.birthday}</h3>
-    <h3>Location: ${user.location.name}</h3>
+    <h5>${user.location.name}</h5>
 
   `;
 
@@ -62,6 +90,7 @@ function setElements(isLogged) {
         document.getElementById("logout-button").style.display = 'block';
         document.getElementById("info").style.display = 'block';
     } else {
+        removeList();
         document.getElementById("fb-button").style.display = 'block';
         document.getElementById("logout-button").style.display = 'none';
         document.getElementById("info").style.display = 'none';
